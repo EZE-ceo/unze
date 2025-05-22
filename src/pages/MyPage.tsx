@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase-config";
-import editIcon from '../assets/edit_icon.png';
+import editIcon from "../assets/edit_Icon.png";
 import logoImg from '../assets/unze_full_logo.png';
 import logoutImg from '../assets/logout.png';
 
