@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../style/LoginPage.css";
 import { auth } from "../firebase-config";
-import logo from "/src/assets/unze_full_logo.png";
+import logo from "../assets/unze_full_logo.png";
 import {
   GoogleAuthProvider,
   signInWithPopup,

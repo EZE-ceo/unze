@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/ChatRoom1996_Received.css';
-import beepImage from '/src/assets/beep.png';
+import beep from "../assets/beep.png"
 
 const ChatRoom1996_Received = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const ChatRoom1996_Received = () => {
 
       <div className="beep-center-wrapper">
         <div className="beep-image-wrapper">
-          <img src={beepImage} alt="받은 삐삐" className="beep-img" />
+        <img src={beep} alt="받은 삐삐" className="beep-img" />
           <div className="beep-number-display">{storedMessage}</div>
         </div>
 

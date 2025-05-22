@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/Splash.css';
-import logo from "/src/assets/unze_full_logo.png";
+import logo from "../assets/unze_full_logo.png";
 
 const Splash = () => {
   const navigate = useNavigate();

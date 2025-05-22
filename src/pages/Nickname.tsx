@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/Nickname.css';
-import logo from "/src/assets/unze_full_logo.png"; // ✅ Netlify에서도 정상 인식
+import logo from "../assets/unze_full_logo.png";
 
 const Nickname = () => {
   const [nickname, setNickname] = useState('');

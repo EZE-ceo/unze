@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/SelectTime.css';
-import unzeLogo from '/src/assets/unze_full_logo.png';
-import myIcon from '/src/assets/my.png';
+import unzeLogo from "../assets/unze_full_logo.png";
+import myIcon from "../assets/my.png";
 
 const yearDescriptions: { [key: string]: string } = {
   "1984": "1984년, 손글씨 편지가 마음을 전하던 시절.",
