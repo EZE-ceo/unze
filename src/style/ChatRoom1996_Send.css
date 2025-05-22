@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'Galmuri14';
+    src: url('../fonts/Galmuri14.ttf') format('truetype');
+  }
+  
+  .send-container {
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/Metal Background.png') no-repeat center center;
+    background-size: cover;
+    font-family: 'Galmuri14', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 0;
+    box-sizing: border-box;
+    position: relative;  /* 반드시 있어야 .display absolute가 기준 잡힘 */
+  }
+  
+ /* 1. 상단 바 */
+ .top-bar {
+    width: 100%;
+    background-color: #7AADAE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+    font-family: 'Galmuri14', sans-serif;
+    font-size: 16px;
+    height: 70px;
+  }
+  
+  /* 2. 포지셔닝 컨트롤 */
+  .top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  
+  
+  
+  .menu-button {
+    background-color: #0018A8;
+    color: yellow;
+    font-family: 'Galmuri14', sans-serif;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 2px solid #f3da54;
+    box-shadow: 2px 2px 0px #000;
+    border-radius: 2px;
+  }
+  
+  .exit-button {
+    all: unset;
+    background-color: #001AFF !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-family: 'Galmuri14', sans-serif !important;
+    font-size: 14px !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    min-width: 60px !important; /* ✅ 넉넉한 너비 확보 */
+    min-height: 25px !important; /* ✅ 충분한 높이 확보 */
+    text-align: center !important;
+    display: inline-flex !important; /* ✅ 수직정렬을 위해 flex 사용 */
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  
+  .date {
+    color: black !important;
+    font-weight: bold;
+  }
+  
+  
+/* 디스플레이 영역 */
+.display {
+    font-size: 20px;
+    background-color: #72903F;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 8px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+  
+    /* ✅ 위치를 따로 고정하기 위해 */
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  
+    /* ✅ 추가 */
+    width: 250px;
+    height: 60px;  /* 숫자 + 이름 2줄 표현 위한 고정값 */
+    text-align: center;
+    overflow: hidden;
+    white-space: normal; /* 줄바꿈 허용 */
+  }
+  
+  
+  
+  /* 키패드 */
+  .keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 80%;
+    justify-items: center;
+  
+    /* 추가: 전체 키패드를 아래로 내림 */
+    margin-top: 300px;
+  }
+  
+  
+  .key-button {
+    background-color: #eeeeee;
+    border-radius: 50px;
+    width: 80px;
+    height: 60px;
+    font-size: 30px;
+    font-family: 'Pretendard SemiBold', sans-serif;
+    border: none;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .ok-button {
+    grid-column: span 3;
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #eeeeee;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Pretendard SemiBold', sans-serif;
+    color: black;
+    border: none;
+  }
+  
+  .friend-popup {
+    /* 배경 투명 오버레이 제거 */
+    background: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .popup-box {
+    background-color: #f4eccd !important;
+    padding: 20px;
+    width: 80%;
+    max-width: 320px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    font-family: 'Galmuri14', sans-serif;
+  }
+  
+  .popup-title {
+    margin-bottom: 10px;
+    font-size: 16px; /* ✅ 줄임 */
+    font-weight: bold;
+    color: black;
+  }
+  
+  .friend-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .friend-item {
+    background-color: #D5CDB2;
+    padding: 10px;
+    margin: 6px 0;
+    cursor: pointer;
+    color: black;
+    border-radius: 4px;
+    font-size: 14px; /* ✅ 글자 크기 줄임 */
+  }
+  
+  .popup-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+  }
+  
+  .popup-btn {
+    padding: 6px 16px;
+    background-color: #D5CDB2;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .receiver {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .input {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

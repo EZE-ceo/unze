@@ -1,0 +1,27 @@
+.exit-button {
+    all: unset;
+    padding: 6px 14px;
+    font-weight: bold;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .exit-1984 {
+    background: none !important;
+    border: none !important;
+    font-size: 20px !important;
+    font-family: 'NanumGaram', sans-serif !important;
+    color: #1a237e !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+  
+  
+.exit-2000 {
+  background-color: black;
+  color: #00FFD1;
+  font-family: 'Galmuri9', sans-serif;
+  font-size: 13px;
+}

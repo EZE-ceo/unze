@@ -1,0 +1,12 @@
+/* src/style/ChatRoom.css */
+.chatroom-container {
+    background-color: white;
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+  }
+  

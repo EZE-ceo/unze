@@ -1,0 +1,403 @@
+/* 전체 채팅방 배경 */
+.chatroom-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00008B;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 24px;
+  box-sizing: border-box;
+}
+
+/* 내부 콘텐츠 래퍼 */
+.chatroom-wrapper {
+  width: 390px;
+  max-width: 100%;
+  height: calc(100vh - 15px);
+  background-color: #00008B;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+/* 헤더 */
+.chatroom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+  padding: 4px 12px;
+  background-color: #0011aa;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+/* 유저 리스트 표시 영역 */
+.chatroom-invite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0011aa;
+  font-size: 14px;
+  padding: 4px 10px;
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.invite-button {
+  padding: 4px 10px;
+  font-size: 13px;
+  background-color: lightgray;
+  border: none;
+  height: 28px;
+  white-space: nowrap;
+}
+
+.chatroom-divider {
+  border: 1px dashed white;
+  margin: 8px 0;
+}
+
+.chatroom-join-message {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.chat-content {
+  flex-grow: 1;
+  padding: 0 12px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.chat-message {
+  display: block;
+  text-align: left;     /* ← 좌측 정렬 고정 */
+  margin-bottom: 6px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.my-message {
+  color: yellow;
+}
+
+.other-message {
+  color: white;
+}
+
+.chatroom-input-area {
+  display: flex;
+  padding: 8px 8px 20px 8px;
+  gap: 8px;
+  margin-top: auto;
+  box-sizing: border-box;
+}
+
+.chatroom-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: 'Courier New', monospace;
+  background-color: #000060;
+  border: none;
+  color: white;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.chatroom-send {
+  padding: 8px 14px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: 'Galmuri14', sans-serif;
+}
+
+/* 초대 팝업 */
+.user-list-popup .user-info .date {
+  color: white !important;
+}
+
+.user-list-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00008B;
+  border: 1px solid white;
+  color: white;
+  padding: 24px 20px;
+  width: 90%;
+  max-width: 320px;
+  z-index: 100;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 10px black;
+  box-sizing: border-box;
+}
+
+.user-list-popup .popup-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Galmuri14', sans-serif;
+  color: white;
+  margin-bottom: 20px;
+  border-bottom: none;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.user-list li {
+  border-top: 1px dotted white;
+  padding: 10px 0;
+}
+
+.user-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.dot {
+  flex-shrink: 0;
+  color: cyan;
+}
+
+.name {
+  flex-shrink: 1;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.date {
+  font-size: 13px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.friend-button {
+  min-width: 72px;
+  height: 28px;
+  font-size: 12px;
+  padding: 0 8px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  font-family: 'Galmuri14', sans-serif;
+  cursor: pointer;
+}
+
+.friend-button.confirmed {
+  background-color: lightgray;
+  color: black;
+}
+
+.invite-link-popup .popup-title {
+  text-align: center;
+  color: white !important;
+  font-family: 'Galmuri14', sans-serif;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.invite-link-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00008B;
+  border: 1px solid white;
+  padding: 24px;
+  width: 80%;
+  max-width: 300px;
+  z-index: 100;
+  font-family: 'Courier New', monospace;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 10px black;
+  box-sizing: border-box;
+}
+
+.popup-close-button {
+  padding: 5px 10px;
+  font-size: 13px;
+  font-family: 'Galmuri14', sans-serif;
+  background-color: #d9d9d9;
+  color: black;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.popup-button {
+  background-color: #d9d9d9;
+  padding: 10px 16px;
+  border: none;
+  font-weight: bold;
+  font-family: 'Galmuri14', sans-serif;
+  cursor: pointer;
+  min-width: 120px;
+  height: 36px;
+}
+
+
+.invite-link-popup .popup-title {
+  color: white;
+  font-family: 'Galmuri14', sans-serif;
+  font-size: 14px;
+  margin-bottom: 16px;
+  border: none;
+}
+
+.invite-link-input {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid white;
+  background-color: #000060;
+  color: white;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.invite-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.invite-button-group button {
+  background-color: #d9d9d9;
+  color: black;
+  border: none;
+  padding: 5px 20px;
+  font-size: 12px;
+  font-family: 'Galmuri14', sans-serif;
+  cursor: pointer;
+}
+
+.exit-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.exit-popup-box {
+  position: relative;
+  padding: 24px;
+  border: 1px solid white;
+  background-color: #00008b;
+  color: white;
+  width: 360px;
+  font-family: 'Galmuri14', sans-serif;
+  overflow: visible; /* ✅ 추가 */
+  box-sizing: border-box;
+}
+
+.exit-popup-box p {
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.exit-textarea {
+  width: 100%;
+  height: 80px; /* ✅ 높이 증가 */
+  font-size: 14px;
+  margin-bottom: 20px;
+  resize: none;
+  padding: 8px;
+  border: none;
+  position: relative; /* ✅ 추가 */
+  font-family: 'Galmuri14', sans-serif;
+  box-sizing: border-box;
+}
+
+.exit-popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* ✅ 버튼 간격 조정 */
+  z-index: 10;
+  position: relative;
+}
+
+.popup-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+
+.exit-textarea {
+  position: relative;
+  z-index: 1;
+}
+
+.exit-popup-buttons button {
+  background-color: #d9d9d9;
+  padding: 10px 16px;
+  border: none;
+  font-weight: bold;
+  font-family: 'Galmuri14', sans-serif;
+  cursor: pointer;
+  min-width: 120px;
+  height: 36px;
+}
+
+.exit-close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px; /* ✅ 우측 상단 위치로 고정 */
+  background: none;
+  border: 1px solid white;
+  color: white;
+  font-size: 14px;
+  padding: 2px 8px;
+  cursor: pointer;
+}

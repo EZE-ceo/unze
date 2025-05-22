@@ -1,0 +1,29 @@
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.splash-logo {
+  width: 200px;
+  animation: fadeIn 1s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.logo {
+  width: 200px;
+  height: auto; /* 비율 유지 */
+  margin-bottom: 40px;
+}

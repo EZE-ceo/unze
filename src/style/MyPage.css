@@ -1,0 +1,174 @@
+/* 마이페이지 전체 레이아웃 */
+.mypage-container {
+  background-color: black;
+  color: #00FFD1;
+  min-height: 100vh;
+
+  padding: 20px;                  /* ✅ 좌우 여백은 있어도 되고, 없애도 됨 */
+  margin: 0;                      /* ✅ 중앙 정렬 제거 */
+  width: 100vw;                   /* ✅ 전체 너비 확장 */
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+}
+
+
+
+/* 상단 로고/로그아웃 */
+.mypage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.mypage-logo {
+  height: 27px;
+  cursor: pointer;
+}
+
+.mypage-logout {
+  height: 32px;
+  cursor: pointer;
+}
+
+/* 닉네임 영역 */
+.mypage-nickname-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+  justify-content: flex-start; /* ✅ 추가 */
+}
+
+
+.mypage-nickname {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00FFD1;
+}
+
+.nickname-input {
+  font-size: 18px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #000;
+}
+
+.save-button {
+  background-color: transparent;
+  border: 1px solid white;
+  white-space: nowrap;   /* 텍스트 줄바꿈 방지 */
+  color: white;
+  padding: 4px 13px;
+  border-radius: 4px;
+  min-width: 48px;       /* 버튼이 너무 좁지 않게 */
+  line-height: 1;        /* 텍스트 세로 중앙 */
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.edit-icon {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  opacity: 0.6;
+  margin-left: 8px;
+}
+
+/* 구분선 */
+.mypage-divider {
+  border: none;
+  border-top: 1px solid #00FFD1;
+  margin: 12px 0;
+}
+
+/* 공통 섹션 스타일 */
+.mypage-section {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #00FFD1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
+}
+
+
+/* 기록 없는 경우 */
+.no-records p {
+  color: #00FFD1;
+  font-size: 12px;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
+}
+
+/* 기록 테이블 */
+.record-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #00FFD1;
+}
+
+.record-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #333;   /* ✅ 구분선 진회색 */
+  color: white;                    /* ✅ 텍스트 흰색 */
+}
+
+
+/* 감정 확인 버튼 */
+.check-button {
+  background-color: transparent;
+  border: 1px solid #00FFD1;
+  color: #00FFD1;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* 친구 목록 토글 */
+.friend-group {
+  margin-bottom: 12px;
+}
+
+.friend-year-header {
+  font-size: 16px;
+  font-weight: bold;
+  color: #b388ff;
+  background-color: #111;
+  padding: 8px 12px;
+  border: 1px solid #b388ff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.friend-year-header:hover {
+  background-color: #222;
+}
+
+.friend-list {
+  padding: 8px 16px;
+  margin-top: 6px;
+  border-left: 2px solid #00FFD1;
+}
+
+.friend-entry {
+  padding: 4px 0;
+  font-size: 14px;
+  color: white;           /* ✅ 친구 이름 흰색 */
+}
+

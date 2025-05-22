@@ -1,0 +1,299 @@
+/* ChatRoom2000 전용 배경 */
+.chatroom2000-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #C0C0C0; /* 회색 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+/* 채팅방 박스 */
+.chatroom-2000s {
+  width: 393px;
+  height: 852px;
+  background: #BFBFBF;
+  box-sizing: border-box;
+  font-family: 'Galmuri9', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 상단 헤더바 */
+.chatroom-2000s .header-bar {
+  width: 100%;
+  height: 30px;
+  background-color: #00097A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  color: #fff;
+  font-size: 12px;
+  box-sizing: border-box;
+  margin-top: 15px; 
+}
+
+/* 엑스 버튼 */
+.chatroom-2000s .exit-button {
+  font-family: 'Galmuri9', sans-serif !important;
+  font-size: 14px;
+  width: 30px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background-color: #E0E0E0;
+  color: black;
+  cursor: pointer;
+}
+
+/* 채팅 탭 영역 */
+.chatroom-2000s .chat-tab-bar {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.chatroom-2000s .chat-tab {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #aaa;
+  padding: 6px 10px;
+  border-radius: 6px 6px 0 0;
+  transform: translate(8px, -1px);
+  height: 22px;
+}
+
+.chatroom-2000s .chat-icon {
+  width: 30px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+.chatroom-2000s .invite-button {
+  background: rgb(32, 32, 156);
+  border: 2px inset #2a2a2a;
+  padding: 4px 10px;
+  font-family: 'Galmuri14', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  color: white;
+  height: 28px;
+  transform: translate(-2px, -5px);
+}
+
+.chatroom-2000s .tab-text {
+  font-size: 12px;
+  color: #333;
+  font-family: 'Galmuri14', sans-serif;
+}
+
+/* 본문 전체 */
+.chatroom-2000s .chat-box {
+  width: 373px;
+  height: 755px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform: translate(9px, -10px);
+}
+
+.chatroom-2000s .participant-bar {
+  background: #C6D8DC;
+  border: 1px solid #64969F;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #1a1a1a;
+}
+
+.chatroom-2000s .participant-label {
+  font-weight: bold;
+  background: #ffffff;
+  border: 1px solid #4da89b;
+  padding: 3px 8px;
+  margin-right: 5px;
+}
+
+.chatroom-2000s .chat-content {
+  flex: 1;
+  padding: 13px;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.4;
+  overflow-y: auto;
+}
+
+.chatroom-2000s .chat-message {
+  text-align: left;
+  padding-left: 5px;
+  font-family: 'Galmuri9', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 입력창 */
+.chatroom-2000s .input-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #aaa;
+  background: #fef8ff;
+  padding: 10px;
+}
+
+.chatroom-2000s .input-area input {
+  flex: 1;
+  padding: 6px;
+  font-family: 'Galmuri14', sans-serif;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.chatroom-2000s .input-area button {
+  background: linear-gradient(to bottom, #E0EFFF, #A9C5D9);
+  border: 1px solid #aaa;
+  padding: 6px 12px;
+  font-family: 'Galmuri14', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---------------------- 전체 공통 팝업 레이아웃 ---------------------- */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-box {
+  background-color: white !important; /* 연노랑 제거 */
+  color: black;
+  border-radius: 16px;
+  padding: 24px;
+  min-width: 280px;
+  max-width: 90vw;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-family: 'Galmuri9', sans-serif;
+  position: relative;
+}
+
+.popup-title {
+  font-size: 14px;
+  font-weight: normal;
+  border-bottom: none !important; /* 기존 밑줄 제거 */
+  margin-bottom: 16px;
+  font-family: 'Galmuri9', sans-serif;
+}
+
+.popup-box input[type="text"],
+.popup-box textarea {
+  width: 100%;
+  font-family: 'Galmuri9', sans-serif;
+  font-size: 13px;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.popup-box textarea {
+  height: 60px;
+  resize: none;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* 버튼 간 여백 */
+}
+
+.popup-btn,
+.confirm-btn {
+  background-color: #dcdcdc;
+  color: black;
+  font-family: 'Galmuri9', sans-serif;
+  font-size: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+.confirm-btn {
+  margin-top: 16px;
+}
+
+/* 친구목록 팝업 전용 */
+.participant-list-box {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  text-align: left;
+}
+
+.participant-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-family: 'Galmuri9', sans-serif;
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+
+.participant-info {
+  flex-grow: 1;
+}
+
+.add-btn {
+  background-color: #dcdcdc;
+  color: black;
+  font-family: 'Galmuri9', sans-serif;
+  font-size: 12px;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* 감정 나가기 팝업 */
+.popup-close-x {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-family: 'Galmuri9', sans-serif;
+  cursor: pointer;
+}

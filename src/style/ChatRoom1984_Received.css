@@ -1,0 +1,6 @@
+.letter-input {
+    padding-left: 8px;      /* ✅ 좌측 여백 추가 */
+    text-align: left;
+    white-space: pre-line;
+  }
+  
