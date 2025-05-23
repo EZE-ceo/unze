@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/ChatRoom1996_Received.css';
-import beep from "../assets/beep.png"
+import beep from "/src/assets/beep.png";
 
 const ChatRoom1996_Received = () => {
   const navigate = useNavigate();

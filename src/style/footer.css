@@ -1,0 +1,16 @@
+.footer {
+    text-align: center;
+    padding: 16px;
+    color: #888;
+    font-size: 12px;
+    z-index: 10;
+    position: relative;
+    background-color: transparent;
+    margin-top: auto;
+  }  
+  
+  .footer-text a {
+    color: #888;
+    text-decoration: underline;
+  }
+  

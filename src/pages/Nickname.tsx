@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/Nickname.css';
-import logo from "../assets/unze_full_logo.png";
+
 
 const Nickname = () => {
   const [nickname, setNickname] = useState('');
@@ -27,7 +27,6 @@ const Nickname = () => {
 
   return (
     <div className="nickname-container">
-      <img src={logo} alt="UN:ZE Logo" className="logo" />
       <h2 className="title">당신은 어떤 이름으로 기억되고 싶나요?</h2>
       <input
         type="text"

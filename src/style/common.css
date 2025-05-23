@@ -359,9 +359,21 @@ html, body, #root {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: black;
+  overflow: hidden; /* ✅ 흔들림 방지 */
+  overscroll-behavior: none;
+  touch-action: manipulation;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  color: #00ffd1;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
   background-color: black;
 }
 
@@ -370,11 +382,12 @@ html, body, #root {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;  /* ✅ 모바일 기준 높이 */
   width: 100vw;
   text-align: center;
   margin: 0;
   padding: 0;
   position: relative;
+  overflow: hidden;
 }
 
