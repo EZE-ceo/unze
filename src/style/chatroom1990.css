@@ -1,12 +1,29 @@
+@font-face {
+  font-family: 'Galmuri14';
+  src: url('/fonts/Galmuri14.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Galmuri9';
+  src: url('/fonts/Galmuri9.ttf') format('truetype');
+}
+
+/* ✅ 이제 이 방에만 폰트 적용됨 */
+.chatroom-1990 {
+  font-family: 'Galmuri14', 'Galmuri9', sans-serif;
+}
+
+
+
 /* 전체 채팅방 배경 */
 .chatroom-container {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* ← vh가 아니라 dvh 사용 */
   background-color: #00008B;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 24px;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 10px;
   box-sizing: border-box;
 }
 
@@ -14,7 +31,7 @@
 .chatroom-wrapper {
   width: 390px;
   max-width: 100%;
-  height: calc(100vh - 15px);
+  height: 100%;
   background-color: #00008B;
   display: flex;
   flex-direction: column;
@@ -95,16 +112,21 @@
 
 .my-message {
   color: yellow;
+  text-align: left !important;
 }
 
 .other-message {
   color: white;
+  text-align: left !important;
 }
 
 .chatroom-input-area {
   display: flex;
   padding: 8px 8px 20px 8px;
+  background-color: #00008B;
   gap: 8px;
+  position: relative;
+  z-index: 2;
   margin-top: auto;
   box-sizing: border-box;
 }
@@ -400,4 +422,12 @@
   font-size: 14px;
   padding: 2px 8px;
   cursor: pointer;
+}
+
+.system-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin: 8px 0;
+  font-size: 13px;
 }

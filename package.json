@@ -10,6 +10,10 @@
     "start": "vite"
   },
   "dependencies": {
+    "@capacitor/android": "^7.3.0",
+    "@capacitor/cli": "^7.2.0",
+    "@capacitor/core": "^7.2.0",
+    "@capacitor/ios": "^7.2.0",
     "firebase": "^11.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -150,19 +150,18 @@
   }
   
   .friend-popup {
-    /* 배경 투명 오버레이 제거 */
-    background: none;
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 20;
-    background: rgba(0, 0, 0, 0.3);
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none; /* 🔑 여기가 핵심 */
   }
   
   .popup-box {
@@ -174,7 +173,9 @@
     text-align: center;
     color: black;
     font-family: 'Galmuri14', sans-serif;
+    pointer-events: auto; /* 🔑 내부는 클릭 가능 */
   }
+  
   
   .popup-title {
     margin-bottom: 10px;

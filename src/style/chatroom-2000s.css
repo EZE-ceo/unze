@@ -1,182 +1,158 @@
-/* ChatRoom2000 전용 배경 */
-.chatroom2000-wrapper {
-  width: 100vw;
-  height: 100vh;
-  background-color: #C0C0C0; /* 회색 배경 */
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  padding-top: 20px;
+/* 2000년대 채팅방 반응형 구조 + 팝업 수정 */
+
+* {
+  font-family: 'Galmuri9', sans-serif !important;
   box-sizing: border-box;
 }
 
-/* 채팅방 박스 */
+.chatroom2000-wrapper {
+  width: 100vw;
+  height: 100dvh;
+  background-color: #C0C0C0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
 .chatroom-2000s {
-  width: 393px;
-  height: 852px;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  max-height: 750px;
   background: #BFBFBF;
-  box-sizing: border-box;
-  font-family: 'Galmuri9', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
   overflow: hidden;
+  border: 1px solid #888;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-/* 상단 헤더바 */
-.chatroom-2000s .header-bar {
-  width: 100%;
-  height: 30px;
+.header-bar {
+  height: 40px;
   background-color: #00097A;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 12px;
-  color: #fff;
+  padding: 0 6px;
+  color: white;
   font-size: 12px;
-  box-sizing: border-box;
-  margin-top: 15px; 
 }
 
-/* 엑스 버튼 */
-.chatroom-2000s .exit-button {
-  font-family: 'Galmuri9', sans-serif !important;
-  font-size: 14px;
-  width: 30px;
-  height: 20px;
-  padding: 0;
+.exit-button {
+  background: #E0E0E0;
   border: none;
-  background-color: #E0E0E0;
-  color: black;
+  font-size: 16px;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
+  color: #222;
+  border-radius: 4px;
+  margin-left: 6px;
 }
 
-/* 채팅 탭 영역 */
-.chatroom-2000s .chat-tab-bar {
-  width: 100%;
-  height: 40px;
+.chat-tab-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8px;
-  box-sizing: border-box;
+  padding: 6px 10px;
+  height: 40px;
 }
 
-.chatroom-2000s .chat-tab {
+.chat-tab {
   display: flex;
   align-items: center;
   background: white;
   border: 1px solid #aaa;
-  padding: 6px 10px;
+  padding: 4px 10px;
   border-radius: 6px 6px 0 0;
-  transform: translate(8px, -1px);
-  height: 22px;
 }
 
-.chatroom-2000s .chat-icon {
+.chat-icon {
   width: 30px;
-  height: 18px;
-  margin-right: 5px;
+  height: 20px;
+  margin-right: 6px;
 }
 
-.chatroom-2000s .invite-button {
-  background: rgb(32, 32, 156);
+.tab-text {
+  font-size: 11px;
+  color: black;
+  font-family: 'Galmuri9', sans-serif;
+}
+
+.invite-button {
+  background: #20209c;
+  color: white;
+  font-size: 12px;
   border: 2px inset #2a2a2a;
   padding: 4px 10px;
-  font-family: 'Galmuri14', sans-serif;
-  font-size: 12px;
   cursor: pointer;
-  color: white;
-  height: 28px;
-  transform: translate(-2px, -5px);
 }
 
-.chatroom-2000s .tab-text {
-  font-size: 12px;
-  color: #333;
-  font-family: 'Galmuri14', sans-serif;
-}
-
-/* 본문 전체 */
-.chatroom-2000s .chat-box {
-  width: 373px;
-  height: 755px;
-  border-radius: 5px;
-  border: 1px solid #ffffff;
-  background: white;
+.chat-box {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  overflow: hidden;
-  transform: translate(9px, -10px);
-}
-
-.chatroom-2000s .participant-bar {
-  background: #C6D8DC;
-  border: 1px solid #64969F;
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
-  font-size: 12px;
-  color: #1a1a1a;
-}
-
-.chatroom-2000s .participant-label {
-  font-weight: bold;
-  background: #ffffff;
-  border: 1px solid #4da89b;
-  padding: 3px 8px;
-  margin-right: 5px;
-}
-
-.chatroom-2000s .chat-content {
-  flex: 1;
-  padding: 13px;
-  font-size: 14px;
-  color: #000;
-  line-height: 1.4;
+  background: white;
+  border: 1px solid #fff;
   overflow-y: auto;
 }
 
-.chatroom-2000s .chat-message {
-  text-align: left;
-  padding-left: 5px;
-  font-family: 'Galmuri9', sans-serif;
+.participant-bar {
+  background: #C6D8DC;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #111;
+}
+
+.participant-label {
+  background: white;
+  border: 1px solid #4da89b;
+  padding: 3px 8px;
+  margin-right: 6px;
+}
+
+.chat-content {
+  flex: 1;
+  padding: 12px;
   font-size: 14px;
+  color: #000;
+  overflow-y: auto;
+}
+
+.chat-message {
+  padding-left: 5px;
   line-height: 1.6;
 }
 
-/* 입력창 */
-.chatroom-2000s .input-area {
+.input-area {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border-top: 1px solid #aaa;
   background: #fef8ff;
   padding: 10px;
 }
 
-.chatroom-2000s .input-area input {
+.input-area input {
   flex: 1;
   padding: 6px;
-  font-family: 'Galmuri14', sans-serif;
   font-size: 12px;
   border: 1px solid #ccc;
   margin-right: 10px;
 }
 
-.chatroom-2000s .input-area button {
+.input-area button {
   background: linear-gradient(to bottom, #E0EFFF, #A9C5D9);
   border: 1px solid #aaa;
   padding: 6px 12px;
-  font-family: 'Galmuri14', sans-serif;
   font-size: 13px;
   cursor: pointer;
 }
 
-/* ---------------------- 전체 공통 팝업 레이아웃 ---------------------- */
-
+/* 팝업 오버레이 */
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -190,25 +166,40 @@
   z-index: 1000;
 }
 
+/* 팝업 박스 */
 .popup-box {
-  background-color: white !important; /* 연노랑 제거 */
+  background-color: white !important;
   color: black;
   border-radius: 16px;
   padding: 24px;
-  min-width: 280px;
-  max-width: 90vw;
+  width: 90%;
+  max-width: 320px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
-  text-align: center;
   font-family: 'Galmuri9', sans-serif;
   position: relative;
+  text-align: center;
+  align-items: center;  /* 추가! */
 }
 
 .popup-title {
   font-size: 14px;
   font-weight: normal;
-  border-bottom: none !important; /* 기존 밑줄 제거 */
   margin-bottom: 16px;
+}
+
+.popup-close-x {
+  position: absolute;
+  top: 12px;
+  right: 16px; 
+  background: none;
+  border: none;
+  font-size: 22px;
   font-family: 'Galmuri9', sans-serif;
+  cursor: pointer;
+  color: #888;
+  z-index: 2;
+  padding: 0;
+  line-height: 1;
 }
 
 .popup-box input[type="text"],
@@ -223,77 +214,85 @@
   box-sizing: border-box;
 }
 
-.popup-box textarea {
-  height: 60px;
-  resize: none;
-}
-
 .popup-buttons {
   display: flex;
-  justify-content: center;
-  gap: 16px; /* 버튼 간 여백 */
-}
-
-.popup-btn,
-.confirm-btn {
-  background-color: #dcdcdc;
-  color: black;
-  font-family: 'Galmuri9', sans-serif;
-  font-size: 14px;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  white-space: nowrap;
-  min-width: 90px;
-}
-
-.confirm-btn {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
   margin-top: 16px;
+  width: 100%;
 }
 
-/* 친구목록 팝업 전용 */
+.popup-btn, .confirm-btn {
+  flex: 1 1 0%;
+  font-size: 15px;
+  padding: 12px 0;
+  margin: 0;
+  border-radius: 8px;
+  min-width: 120px; /* 버튼이 1개여도 넓게 보이게 */
+  min-height: 42px;
+  text-align: center;
+  box-sizing: border-box;
+  background: #ededed;
+  color: #111;
+  border: none;
+  font-family: 'Galmuri9', sans-serif;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.system-message {
+  text-align: center;
+  color: #0055FF;
+  font-weight: bold;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
 .participant-list-box {
   list-style: none;
   padding: 0;
-  margin: 0 0 12px;
-  text-align: left;
+  margin: 12px 0 20px 0;
 }
 
 .participant-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 13px;
-  font-family: 'Galmuri9', sans-serif;
-  margin-bottom: 10px;
-  padding-left: 4px;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #ececec;
+  font-size: 14px;
+  line-height: 1.1;
 }
 
 .participant-info {
-  flex-grow: 1;
+  flex: 1;
+  text-align: left;
+  font-size: 14px;
+  color: #222;
+  font-family: 'Galmuri9', sans-serif;
 }
 
-.add-btn {
-  background-color: #dcdcdc;
-  color: black;
+/* 기존 popup-btn 유지, 아래는 옵션 */
+.popup-btn[disabled], .popup-btn:disabled {
+  background: #f5f5f7 !important;
+  color: #bbb !important;
+  border: 1px solid #e0e0e0 !important;
+  opacity: 1 !important;   /* 기존 opacity 낮추지 말고 1로! */
+  font-size: 13px;
+  padding: 4px 10px;
+  min-width: 44px;
+  max-width: 60px;
+  height: 28px;
   font-family: 'Galmuri9', sans-serif;
-  font-size: 12px;
-  border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-left: 8px;
+  font-weight: 400;
 }
 
-/* 감정 나가기 팝업 */
-.popup-close-x {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-family: 'Galmuri9', sans-serif;
-  cursor: pointer;
+.popup-btn.small,
+.popup-btn:disabled {
+  font-size: 12px !important;
+  padding: 4px 10px !important;
+  min-width: 44px;
+  max-width: 60px;
+  height: 28px;
 }

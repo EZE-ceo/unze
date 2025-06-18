@@ -1,3 +1,12 @@
+:root {
+  --vh: 100vh;
+}
+@media screen and (max-width: 768px) {
+  :root {
+    --vh: calc(100vh - env(safe-area-inset-bottom));
+  }
+}
+
 /* 마이페이지 전체 레이아웃 */
 .mypage-container {
   background-color: black;
@@ -11,24 +20,31 @@
   font-family: 'Pretendard', sans-serif;
 }
 
-
-
 /* 상단 로고/로그아웃 */
 .mypage-header {
+  position: fixed;
+  top: 10;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 12px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
+  background-color: black; /* 배경 색 고정 */
+  z-index: 100;
 }
 
 .mypage-logo {
   height: 27px;
   cursor: pointer;
+  object-fit: contain;
 }
 
 .mypage-logout {
   height: 32px;
   cursor: pointer;
+  object-fit: contain;
 }
 
 /* 닉네임 영역 */
@@ -36,8 +52,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 12px 0;
-  justify-content: flex-start; /* ✅ 추가 */
+  margin-top: 80px;         /* 상단 헤더 공간 확보 */
+  margin-bottom: 12px;      /* 아래 여백만 */
+  justify-content: flex-start;
 }
 
 
@@ -172,3 +189,9 @@
   color: white;           /* ✅ 친구 이름 흰색 */
 }
 
+.check-button.checked {
+  background: #444 !important;
+  color: #aaa !important;
+  border: 1px solid #888 !important;
+  cursor: not-allowed !important;
+}

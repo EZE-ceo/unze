@@ -1,21 +1,111 @@
-html, body, #root {
-  height: 100%;
+/* ✅ 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ✅ 폰트 등록 */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/fonts/Pretendard-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Galmuri14';
+  src: url('/fonts/Galmuri14.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Galmuri9';
+  src: url('/fonts/Galmuri9.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NanumGaramYeonGgoc';
+  src: url('/fonts/NanumGaramYeonGgoc.ttf') format('truetype');
+}
+
+/* ✅ 루트 높이 변수 */
+:root {
+  --vh: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --vh: calc(100vh - env(safe-area-inset-bottom));
+  }
+}
+
+/* ✅ html, body 구조 */
+html,
+body,
+#root {
+  height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   margin: 0;
   padding: 0;
-  display: block;
   background-color: black;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* ✅ 페이지별 폰트 적용 */
+.default-page {
+  font-family: 'Pretendard Variable', sans-serif !important;
+}
+
+.chat1990 {
+  font-family: 'Galmuri14', 'Galmuri9', sans-serif !important;
+}
+
+.chat2000 {
+  font-family: 'Galmuri14', 'Galmuri9', sans-serif !important;
+}
+
+.chat1996 {
+  font-family: 'Galmuri14', 'Galmuri9', sans-serif !important;
+}
+
+.chat1984 {
+  font-family: 'NanumGaramYeonGgoc', serif !important;
 }
 
 body {
-  background-color: black;
-  margin: 0;
-  font-family: 'Pretendard', sans-serif;
-  color: #00ffd1;
-  font-size: 16px;
-  line-height: 1.6;
-  text-align: center;
+    background-color: black;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    color: #00ffd1;
+    margin: 0;
+  }
+  
+body.default-page {
+  font-family: 'Pretendard Variable', sans-serif;
 }
+
+
+
+/* 전역 컬러 제거 → 각 컴포넌트에서 지정해야 함 */
+
+
+:root {
+  --vh: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --vh: calc(100vh - env(safe-area-inset-bottom));
+  }
+}
+
 
 .header {
   position: absolute;
@@ -99,11 +189,25 @@ select::-ms-expand {
   display: none;
 }
 
-select.year-select { width: 90px !important; }
-select.month-select { width: 60px !important; }
-select.day-select { width: 60px !important; }
-input.time-input { width: 80px !important; }
-input.location-input { width: 120px !important; }
+select.year-select {
+  width: 90px !important;
+}
+
+select.month-select {
+  width: 60px !important;
+}
+
+select.day-select {
+  width: 60px !important;
+}
+
+input.time-input {
+  width: 80px !important;
+}
+
+input.location-input {
+  width: 120px !important;
+}
 
 .gray-text {
   color: #777 !important;
@@ -308,9 +412,11 @@ input.location-input { width: 120px !important; }
   padding: 0 20px;
   z-index: 999;
 }
+
 .logo-unze {
   width: 70px;
 }
+
 .icon-my {
   width: 45px;
   cursor: pointer;
@@ -354,35 +460,13 @@ body::after {
   content: none !important;
 }
 
-html, body, #root {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  overflow: hidden; /* ✅ 흔들림 방지 */
-  overscroll-behavior: none;
-  touch-action: manipulation;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-body {
-  font-family: 'Pretendard', sans-serif;
-  color: #00ffd1;
-  font-size: 16px;
-  line-height: 1.6;
-  text-align: center;
-  background-color: black;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100dvh;  /* ✅ 모바일 기준 높이 */
+  height: 100dvh;
+  /* ✅ 모바일 기준 높이 */
   width: 100vw;
   text-align: center;
   margin: 0;
@@ -391,3 +475,32 @@ body {
   overflow: hidden;
 }
 
+.default-page * {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', 'Apple SD Gothic Neo', sans-serif !important;
+}
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: white;
+  font-size: 14px;
+  font-weight: 600;
+  width: 280px;
+  max-width: 80%;
+  margin: 32px auto 24px auto;
+  /* ✅ 위 여백 조절 포인트 */
+  cursor: pointer;
+  box-shadow: 0 0 12px #00ffd1;
+}
+
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+}

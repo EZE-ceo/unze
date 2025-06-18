@@ -1,7 +1,8 @@
+// src/pages/Nickname.tsx
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/Nickname.css';
-
 
 const Nickname = () => {
   const [nickname, setNickname] = useState('');
@@ -12,7 +13,7 @@ const Nickname = () => {
     const fromLogin = sessionStorage.getItem('fromLogin');
 
     if (savedNickname && !fromLogin) {
-      navigate("/select-time"); // ✅ 소문자로 변경
+      navigate('/select-era');
     }
 
     sessionStorage.removeItem('fromLogin');
@@ -21,12 +22,12 @@ const Nickname = () => {
   const handleConfirm = () => {
     if (nickname.trim()) {
       localStorage.setItem('unzeNickname', nickname);
-      navigate("/select-time"); // ✅ 소문자로 변경
+      navigate('/select-era');
     }
   };
 
   return (
-    <div className="nickname-container">
+    <div className="nickname-container default-page">
       <h2 className="title">당신은 어떤 이름으로 기억되고 싶나요?</h2>
       <input
         type="text"
